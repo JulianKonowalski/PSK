@@ -1,0 +1,357 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Pakiety podstawowe ---
+\usepackage[polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{calc}
+% Pandoc-generated macro
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% --- Konfiguracja strony ---
+\geometry{margin=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+% --- Kolorystyka ---
+\definecolor{NavyBlue}{RGB}{31, 56, 100}
+\definecolor{MidBlue}{RGB}{46, 117, 182}
+\definecolor{LightBlue}{RGB}{214, 228, 240}
+\definecolor{Gray}{RGB}{242, 242, 242}
+
+% --- Stylizacja nagłówków ---
+\titleformat{\section}
+  {\color{NavyBlue}\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[1.5pt]}]
+
+\titleformat{\subsection}
+  {\color{MidBlue}\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% --- Nagłówek i stopka ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small \color{gray} Pakiet Dokumentacji Cyberbezpieczeństwa v1.0}
+\fancyhead[R]{\small \color{gray} [NAZWA FIRMY]}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\small \color{gray} POUFNE}
+
+% --- Ustawienia tabel ---
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{4pt}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+\phantomsection\label{doc11}
+DRP-011
+
+\section{PLAN ODTWARZANIA PO KATASTROFIE (DISASTER RECOVERY
+PLAN)}\label{plan-odtwarzania-po-katastrofie-disaster-recovery-plan}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*350-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*650-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Odpowiedzialny: & Właściciel / Administrator IT \\
+Globalne RTO (dla procesów biznesowych): & 19-20 oraz 24-25 dzień miesiąca: 6 godzin \newline Pozostałe dni miesiąca: 24 godziny \\
+RPO (dla danych księgowych): & 4 godziny \\
+Testowanie planu: & Co 12 miesięcy (test pełny) + co 3 miesiące (test częściowy) \\
+\end{longtable}
+
+\subsection{Sztab Kryzysowy i deklaracja katastrofy}\label{sztab-kryzysowy-i-deklaracja-katastrofy}
+
+Procedurę DRP (ogłoszenie stanu katastrofy) może uruchomić wyłącznie wyznaczona osoba ze Sztabu Kryzysowego, po wcześniejszej ocenie powagi incydentu. Samodzielne podjęcie działań odtworzeniowych przez pracowników niższego szczebla jest zabronione.
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Rola w kryzysie & Stanowisko & Obowiązki / Uprawnienia \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Koordynator DRP & Właściciel / Zarząd & Podejmuje formalną decyzję o ogłoszeniu katastrofy. Zarządza komunikacją biznesową i prawną. \\
+Główny Wykonawca & Główny Administrator IT & Koordynuje techniczne działania odtworzeniowe. Nadzoruje pracę zespołów obszarowych, weryfikuje poprawność przywracania systemów i raportuje do Zarządu. \\
+Specjaliści ds. Odtwarzania & Zespoły IT (Administratorzy Obszarowi) & Realizują techniczne kroki DRP w przypisanych im obszarach (Infrastruktura sieciowa, Samba, Hosting, AD, VPN) wg ustalonej kolejności. Raportują postępy Głównemu Administratorowi. \\
+Lider Biznesowy & Główny Księgowy & Weryfikuje integralność odzyskanych danych (np. po przywróceniu systemu księgowego). Informuje zespół księgowy o gotowości środowiska do dalszej pracy. \\
+\end{longtable}
+
+\subsection{Zapasowy kanał komunikacji}\label{zapasowy-kanal-komunikacji}
+
+W przypadku krytycznej awarii infrastruktury IT (np. niedostępność kontrolera domeny Active Directory, poczty e-mail czy infrastruktury sieciowej), standardowe firmowe kanały komunikacji mogą być całkowicie niedostępne. W celu zapewnienia sprawnego zarządzania incydentem, ustala się następujące zasady komunikacji awaryjnej:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Powiadamianie pracowników (kanał ogólny):} Głównym zapasowym kanałem informowania pracowników firmy księgowej o awarii, przewidywanym czasie przestoju (RTO) oraz o wznowieniu pracy są \textbf{zbiorcze komunikaty SMS}. Wysyłką SMS-ów zarządza Koordynator DRP (lub wyznaczony Lider Biznesowy).
+\item
+  \textbf{Komunikacja operacyjna (Sztab Kryzysowy i zespoły IT):} Do bieżącego koordynowania prac naprawczych pomiędzy Administratorami (odpowiedzialnymi za sieć, Sambę, AD, hosting) wykorzystywane są bezpośrednie połączenia telefoniczne.
+\item
+  \textbf{Awaryjna baza kontaktów:} Aby komunikacja SMS była możliwa w sytuacji braku dostępu do serwerów i bazy danych, \textbf{wydrukowana kopia} aktualnej listy numerów telefonów do wszystkich pracowników, członków Sztabu Kryzysowego oraz kluczowych dostawców zewnętrznych (np. dostawca Hostingu) musi być przechowywana w bezpiecznym, fizycznym miejscu (np. sejf w biurze Właściciela). Lista ta jest aktualizowana co 6 miesięcy.
+\end{itemize}
+
+\subsection{Klasyfikacja systemów
+krytycznych}\label{klasyfikacja-systemuxf3w-krytycznych}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+System & Priorytet & RTO (maks.) & RPO (maks.) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+System księgowy (główna aplikacja) & KRYTYCZNY (P1) & 2 godziny & 4
+godziny \\
+Baza danych klientów & KRYTYCZNY (P1) & 2 godziny & 4 godziny \\
+Windows Server / Active Directory & KRYTYCZNY (P1) & 2 godziny & 4 godziny \\
+Poczta e-mail & WYSOKI (P2) & 4 godziny & 24 godziny \\
+Przestrzeń dyskowa (Samba) & WYSOKI (P2) & 4 godziny & 24
+godziny \\
+VPN / Zdalny dostęp & ŚREDNI (P3) & 8 godzin & 48 godzin \\
+Hosting (Strona WWW) & NISKI (P4) & 48 godzin & 7 dni \\
+\end{longtable}
+
+\subsection{Kolejność przywracania
+systemów}\label{kolejnoux15bux107-przywracania-systemuxf3w}
+
+\begin{enumerate}
+\tightlist
+\item
+  \textbf{BEZPIECZEŃSTWO} -- czy środowisko jest bezpieczne? (brak
+  aktywnego ataku)
+\item
+  Infrastruktura sieciowa (router, switch, firewall) -- konfiguracja z
+  backupu
+\item
+  Windows Server / Active Directory -- zarządzanie tożsamością
+\item
+  Serwer baz danych -- przywracanie z ostatniego czystego backupu
+\item
+  System księgowy -- weryfikacja integralności danych
+\item
+  Przestrzeń dyskowa (Samba) -- przywrócenie plików i struktury katalogów z backupu
+\item
+  Weryfikacja poprawnego logowania i dostępu do udziałów (Samby)
+\item
+  Poczta e-mail
+\item
+  VPN i dostęp zdalny
+\item
+  Weryfikacja kompletności -- porównanie z RPO
+\item
+  Informacja dla pracowników o wznowieniu pracy
+\item
+  Dokumentacja incydentu, wnioski (lessons learned), aktualizacja DRP
+\end{enumerate}
+
+\subsection{Procedura powrotu do infrastruktury głównej (Failback)}\label{procedura-powrotu-failback}
+
+Po zażegnaniu kryzysu, naprawieniu głównej infrastruktury lub wdrożeniu nowego sprzętu, następuje zaplanowany powrót do standardowego trybu pracy (tzw. Failback). Proces ten jest krytyczny, aby nie utracić danych wprowadzonych przez księgowe w czasie działania na środowisku awaryjnym.
+
+\textbf{Główne kroki procedury Failback:}
+\begin{enumerate}
+\tightlist
+\item
+  \textbf{Weryfikacja docelowego środowiska:} Główny Administrator IT potwierdza pełną sprawność, stabilność i bezpieczeństwo (brak podatności/malware) naprawionej infrastruktury (Active Directory, sieć, hosting).
+\item
+  \textbf{Zaplanowanie okna serwisowego:} Ustalenie z Liderem Biznesowym (Głównym Księgowym) terminu przełączenia. Przepięcie musi nastąpić poza godzinami pracy biura, aby uniknąć rozbieżności w bazach danych.
+\item
+  \textbf{Synchronizacja danych (Reverse Synchronization):} Wykonanie kopii zapasowej aktualnych danych ze środowiska awaryjnego (baza danych klientów, pliki na serwerze Samba) i odtworzenie ich na infrastrukturze głównej.
+\item
+  \textbf{Przepięcie usług sieciowych:} Przekierowanie ruchu z powrotem na główne serwery (np. rekonfiguracja routingu dla VPN, aktualizacja rekordów DNS dla Hostingu).
+\item
+  \textbf{Testy funkcjonalne i wznowienie pracy:} Potwierdzenie dostępu do Active Directory i zasobów, a następnie poinformowanie pracowników o zakończeniu okna serwisowego.
+\item
+  \textbf{Zakończenie DRP:} Odtworzenie standardowych harmonogramów kopii zapasowych dla głównej infrastruktury i oficjalne zamknięcie incydentu z wpisem do dokumentacji (Lessons Learned).
+\end{enumerate}
+
+
+
+\subsection{Lokalizacje kopii zapasowych}\label{lokalizacje-kopii-zapasowych}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Rodzaj kopii & Lokalizacja & Dostęp (kto / jak) & Przetestowany \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Backup lokalny (NAS) & {[}LOKALIZACJA{]} & {[}DANE DOSTĘPU{]} & {[} {]}
+\underline{\hspace{2cm}} \\
+Backup offsite (fizyczny) & {[}LOKALIZACJA{]} & {[}OSOBA
+ODPOWIEDZIALNA{]} & {[} {]} \underline{\hspace{2cm}} \\
+Backup chmurowy & {[}PLATFORMA/URL{]} & {[}DANE DOSTĘPU{]} & {[} {]}
+\underline{\hspace{2cm}} \\
+\end{longtable}
+
+\subsection{Procedura testowania DRP}\label{procedura-testowania-drp}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Test częściowy (co kwartał):} przywracanie wybranego systemu
+  lub pliku z backupów -- dokumentacja czasu i wyników
+\item
+  \textbf{Test pełny (co 12 miesięcy):} symulacja pełnej utraty
+  środowiska (możliwe środowisko testowe)
+\item
+  Dokumentacja wyników testu: osiągnięty RTO, RPO, uchybienia
+\item
+  Aktualizacja DRP na podstawie wyników testów
+\end{itemize}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc12}
+PLAN-012
+
+\newpage 
+
+\section{PLAN CIĄGŁEGO DOSKONALENIA
+CYBERBEZPIECZEŃSTWA}\label{plan-ciux105gux142ego-doskonalenia-cyberbezpieczeux144stwa}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Odpowiedzialny: & Właściciel / Administrator IT \\
+Cykl przeglądu: & Kwartalny przegląd KPI + roczne podsumowanie i
+planowanie \\
+\end{longtable}
+
+Cyberbezpieczeństwo nie jest jednorazowym projektem, lecz procesem.
+Firma zobowiązuje się do regularnego przeglądu, doskonalenia i
+rozwijania swoich praktyk bezpieczeństwa.
+
+\subsection{Cykl PDCA dla cyberbezpieczeństwa}\label{cykl-pdca-dla-cyberbezpieczeux144stwa}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*430-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Faza & Działanie & Przykłady aktywności \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{[P]} PLAN (Planowanie) & Ocena ryzyka, ustalenie celów & Roczna ocena ryzyka, ustalenie KPI bezpieczeństwa \\
+{[D]} DO (Realizacja) & Wdrożenie środków & Nowe narzędzia, szkolenia, zaktualizowane procedury \\
+{[C]} CHECK (Sprawdzenie) & Monitorowanie i audyt & Testy penetracyjne, przeglądy logów, KPI \\
+{[A]} ACT (Działanie) & Korekty i ulepszenia & Aktualizacja polityk po incydencie / audycie \\
+\end{longtable}
+
+
+\subsection{Roczna ocena ryzyka
+(szablon)}\label{roczna-ocena-ryzyka-szablon}
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*150-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*380-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Ryzyko & Prawdopodo\-bieństwo \newline (1--5) & Wpływ \newline (1--5) & Planowane działanie (Korekcyjne/Zapobiegawcze) \\
+%Ryzyko & Prawdopodobieństwo (1--5) & Wpływ (1--5) & Planowane działanie (Korekcyjne/Zapobiegawcze) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Phishing / kompromitacja konta Active Directory & 4 & 5 & Wdrożenie MFA (Multi-Factor Authentication) dla wszystkich kont, kwartalne szkolenia z cyberbezpieczeństwa. \\
+Ransomware (szyfrowanie udziałów Samba i baz danych) & 3 & 5 & Segmentacja sieci, zaostrzenie uprawnień na Sambie (zasada najmniejszych uprawnień), weryfikacja backupów offline. \\
+Wyciek danych klientów (podatność w Hostingu/WWW) & 2 & 5 & Kwartalne skanowanie podatności aplikacji webowej, wdrożenie zapory WAF (Web Application Firewall). \\
+Nieautoryzowany dostęp z zewnątrz (VPN brute-force) & 3 & 4 & Wymuszenie silnych haseł w AD, wdrożenie blokady konta po 5 błędnych próbach, geoblokowanie ruchu na VPN. \\
+Utrata backupów / Awaria sprzętowa NAS & 2 & 4 & Wdrożenie reguły backupu 3-2-1 (w tym kopia w chmurze lub offline wg. procedur DRP). \\
+Awaria głównej infrastruktury sieciowej (Router/Switch) & 2 & 3 & Przechowywanie zapasowych konfiguracji (backup config) na bezpiecznym serwerze, umowa SLA z dostawcą sprzętu. \\
+\end{longtable}
+
+\subsection{KPI -- wskaźniki poziomu
+bezpieczeństwa}\label{kpi-wskaux17aniki-poziomu-bezpieczeux144stwa}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*320-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Wskaźnik & Cel & Aktualny wynik & Trend \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Czas wdrożenia krytycznych łat (Windows Server / VPN) & \textless{} 72 godziny od publikacji & \underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+Testy przywracania systemów DRP (AD, Samba, Baza) & 100\% zakończonych sukcesem & \underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+Czas średniego reagowania na incydent (MTTR) & \textless{} 4 godziny & \underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+\% pracowników z aktualnym szkoleniem Security Awareness & 100\% & \underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+Skuteczne logowania VPN bez użycia MFA & 0 & \underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+Współczynnik kliknięć w symulowanych testach Phishingowych & \textless{} 5\% & \underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+\end{longtable}
+
+\subsection{Harmonogram działań
+doskonalenia}\label{harmonogram-dziaux142aux144-doskonalenia}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*320-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Działanie & Termin & Odpowiedzialny & Status \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Roczna ocena ryzyka dla systemów IT & Styczeń & Właściciel / Główny Admin IT & {[} {]} \underline{\hspace{2cm}} \\
+Automatyczne skanowanie podatności (VPN, Hosting) & Co kwartał & Zespół Sieci / Hostingu & {[} {]} \underline{\hspace{2cm}} \\
+Wewnętrzny audyt bezpieczeństwa (Zgodność z ISO/RODO) & Q3 & Wyznaczony Audytor & {[} {]} \underline{\hspace{2cm}} \\
+Test DRP (pełny dla AD, Samby i Baz Danych) & Q4 & Główny Admin IT & {[} {]} \underline{\hspace{2cm}} \\
+Szkolenia odświeżające (Anty-phishing) & Co 12 miesięcy & Dział IT & {[} {]} \underline{\hspace{2cm}} \\
+Przegląd uprawnień użytkowników w Active Directory i Sambie & Co 6 miesięcy & Zespół AD / Samba & {[} {]} \underline{\hspace{2cm}} \\
+Przegląd Zarządzania bezpieczeństwem informacji (Management Review) & Grudzień (Q4) & Właściciel / Zarząd & {[} {]}\underline{\hspace{2cm}} \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+{[}NAZWA FIRMY KSIĘGOWEJ{]} • Pakiet Dokumentacji Cyberbezpieczeństwa
+v1.0 • POUFNE
+
+\end{document}
