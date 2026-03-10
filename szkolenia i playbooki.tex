@@ -1,0 +1,399 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Pakiety podstawowe ---
+\usepackage[polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{calc}
+% Pandoc-generated macro
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% --- Konfiguracja strony ---
+\geometry{margin=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+% --- Kolorystyka ---
+\definecolor{NavyBlue}{RGB}{31, 56, 100}
+\definecolor{MidBlue}{RGB}{46, 117, 182}
+\definecolor{LightBlue}{RGB}{214, 228, 240}
+\definecolor{Gray}{RGB}{242, 242, 242}
+
+% --- Stylizacja nagłówków ---
+\titleformat{\section}
+  {\color{NavyBlue}\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[1.5pt]}]
+
+\titleformat{\subsection}
+  {\color{MidBlue}\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% --- Nagłówek i stopka ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small \color{gray} Pakiet Dokumentacji Cyberbezpieczeństwa v1.0}
+\fancyhead[R]{\small \color{gray} [NAZWA FIRMY]}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\small \color{gray} POUFNE}
+
+% --- Ustawienia tabel ---
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{4pt}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+\phantomsection\label{doc8}
+PROC-008
+
+\section{PROCEDURA SZKOLEŃ I WERYFIKACJI WIEDZY Z
+CYBERBEZPIECZEŃSTWA}\label{procedura-szkoleux144-i-weryfikacji-wiedzy-z-cyberbezpieczeux144stwa}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Wszyscy pracownicy i współpracownicy \\
+Odpowiedzialny: & Administrator IT + Właściciel \\
+Częstotliwość: & Szkolenie bazowe: onboarding \textbar{} Odświeżające:
+co 12 miesięcy \\
+\end{longtable}
+
+\subsection{1. Program szkoleń}\label{program-szkoleux144}
+
+\subsubsection{Szkolenie bazowe (nowi
+pracownicy)}\label{szkolenie-bazowe-nowi-pracownicy}
+
+\begin{itemize}
+\tightlist
+\item
+  Czas trwania: min. 2 godziny
+\item
+  Format: prezentacja + omówienie + quiz
+\item
+  Zawartość: polityki IT, hasła i MFA, phishing i inżynieria społeczna,
+  obsługa incydentów, RODO, bezpieczna praca zdalna
+\item
+  Wymagany wynik quizu: min. \textbf{80\%}
+\item
+  Powtarzanie przy wyniku poniżej 80\% (max 3 podejścia, potem szkolenie
+  indywidualne)
+\end{itemize}
+
+\subsubsection{Szkolenie odświeżające (co 12
+miesięcy)}\label{szkolenie-odux15bwieux17cajux105ce-co-12-miesiux119cy}
+
+\begin{itemize}
+\tightlist
+\item
+  Czas trwania: min. 1 godzina
+\item
+  Format: e-learning lub warsztat stacjonarny
+\item
+  Zawartość: nowe zagrożenia roku, przegląd incydentów z minionego roku,
+  nowe procedury
+\item
+  Wymagany wynik testu: min. \textbf{80\%}
+\end{itemize}
+
+\subsection{2. Testy phishingowe}\label{testy-phishingowe}
+
+Firma przeprowadza symulowane ataki phishingowe w celu weryfikacji
+świadomości pracowników:
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*430-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Parametr & Opis & Wartość docelowa \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Częstotliwość & Niezapowiedziane testy & Co kwartał (minimum) \\
+Narzędzie & Platforma do symulacji phishingu & {[}NAZWA -- np.
+GoPhish/Cofense{]} \\
+Próg alertu & Odsetek kliknięć w link & Cel: \textless10\%
+pracowników \\
+Reakcja na kliknięcie & Natychmiastowe szkolenie remediacyjne &
+Obowiązkowe w ciągu 7 dni \\
+Raportowanie & Anonimowe wyniki zbiorcze & Co kwartał -- kierownik \\
+\end{longtable}
+
+\subsection{3. Przegląd Playbooków i
+ćwiczenia}\label{przeglux105d-playbookuxf3w-i-ux107wiczenia}
+
+\begin{itemize}
+\tightlist
+\item
+  Pracownicy zapoznają się z Playbookiem Incident Response (PLAY-010) co
+  12 miesięcy
+\item
+  Coroczne ćwiczenie tablicowe (tabletop exercise) -- symulacja
+  scenariusza incydentu
+\item
+  Udokumentowane wyniki ćwiczenia i wnioski (lessons learned)
+\end{itemize}
+
+\subsection{4. Rejestr szkoleń (szablon) }\label{rejestr-szkoleux144}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*220-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*180-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Pracownik & Szkolenie & Data & Wynik testu & Certyfikat \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\underline{\hspace{3cm}} & Bazowe & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}}\% & {[} {]} TAK \\
+\underline{\hspace{3cm}} & Odświeżające & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}}\% & {[} {]} TAK \\
+\underline{\hspace{3cm}} & Phishing test & \underline{\hspace{2cm}}
+& Kliknął: {[} {]} TAK / NIE & N/A \\
+\underline{\hspace{3cm}} & Bazowe & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}}\% & {[} {]} TAK \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc10}
+PLAY-010
+
+\section{PLAYBOOK SYTUACJI NIETYPOWYCH -- INCIDENT
+RESPONSE}\label{playbook-sytuacji-nietypowych-incident-response}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Wszyscy pracownicy \\
+Odpowiedzialny: & Właściciel / Administrator IT \\
+Aktualizacja: & Po każdym incydencie i co 12 miesięcy \\
+\end{longtable}
+
+\textbf{ALARM:} Ten dokument musi być dostępny OFFLINE (wydrukowany) w widocznym
+miejscu. W przypadku incydentu sieć może być niedostępna.
+
+\subsection{1. Kontakty alarmowe -- WYPEŁNIĆ I
+WYDRUKOWAĆ}\label{kontakty-alarmowe-wypeux142niux107-i-wydrukowaux107}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Rola & Imię i Nazwisko & Telefon / E-mail & Zakres odpowiedzialności \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Właściciel firmy (CISO) & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Główna decyzja, autoryzacja działań \\
+Administrator IT & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Techniczne działanie i izolacja \\
+Osoba do kontaktu z Policją & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Zgłoszenia prawne, przestępstwa \\
+Osoba do kontaktu z mediami & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & JEDEN głos firmy, komunikacja zewn. \\
+Osoba do kontaktu z UODO & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Naruszenia RODO (72h) \\
+Prawnik firmy & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Porady prawne, kontakty z organami \\
+Ubezpieczyciel (cyber) & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Zgłoszenie szkody \\
+Zewnętrzna firma IT (backup) & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Wsparcie techniczne awaryjne \\
+\end{longtable}
+
+Ważne numery: Policja: 997 \textbar{} CERT Polska: cert.pl \textbar{}
+UODO: uodo.gov.pl \textbar{} tel. UODO: 22 531 03 00
+
+\subsection{2. Fazy reagowania na
+incydent}\label{fazy-reagowania-na-incydent}
+
+\subsubsection{FAZA 1: Identyfikacja (0--30
+min)}\label{faza-1-identyfikacja-030-min}
+
+\begin{enumerate}
+\tightlist
+\item
+  Pracownik wykrywa anomalię → \textbf{NATYCHMIASTOWO} informuje
+  administratora IT i właściciela
+\item
+  Administrator IT ocenia powagę incydentu wg klasyfikacji poniżej
+\item
+  Rejestracja incydentu w Rejestrze Incydentów (godzina, opis, reporter)
+\end{enumerate}
+
+\subsubsection{FAZA 2: Izolacja (30--60
+min)}\label{faza-2-izolacja-3060-min}
+
+\begin{enumerate}
+\tightlist
+\item
+  Odizolowanie dotkniętych systemów od sieci (jeśli dotyczy) -- kabel
+  LAN + WiFi
+\item
+  Zmiana haseł do zagrożonych kont
+\item
+  Zabezpieczenie dowodów (logi, kopie plików) -- \textbf{NIE USUWAĆ
+  niczego}
+\end{enumerate}
+
+\subsubsection{FAZA 3: Ograniczenie i
+likwidacja}\label{faza-3-ograniczenie-i-likwidacja}
+
+\begin{enumerate}
+\tightlist
+\item
+  Blokada ruchu sieciowego do/ze źródeł ataku na firewall
+\item
+  Przywracanie z kopii zapasowej (wg DRP-011)
+\item
+  Identyfikacja wektora ataku i usunięcie złośliwego kodu
+\end{enumerate}
+
+\subsection{3. Matryca powiadamiania}\label{matryca-powiadamiania}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Kogo powiadomić & Kiedy & Kto powiadamia & Termin \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+UODO (Urząd Ochrony Danych) & Naruszenie danych osobowych z ryzykiem &
+Właściciel / IOD & \textbf{72 godziny} \\
+Klienci poszkodowani & Wysokie ryzyko dla ich danych & Właściciel & Bez
+zwłoki \\
+Policja / CERT Polska & Przestępstwo, atak hakerski, ransomware &
+Wyznaczona osoba & Niezwłocznie \\
+Media / PR & Jeśli incydent jest/może być publiczny & Właściciel (JEDEN
+głos) & Po konsultacji z prawnikiem \\
+Ubezpieczyciel & Szkoda objęta polisą cyber & Właściciel & 24--48
+godzin \\
+\end{longtable}
+
+\subsection{4. Scenariusze -- reakcje}\label{scenariusze-reakcje}
+
+\subsubsection{Scenariusz A: Phishing / kompromitacja
+konta}\label{scenariusz-a-phishing-kompromitacja-konta}
+
+\begin{itemize}
+\tightlist
+\item
+  Natychmiast zmień hasło i zresetuj MFA dla konta
+\item
+  Przegląd aktywności konta (logi) za ostatnie 30 dni
+\item
+  Sprawdź czy dane były eksportowane lub przesyłane
+\item
+  Poinformuj pozostałych pracowników (alert phishingowy)
+\end{itemize}
+
+\subsubsection{Scenariusz B:
+Ransomware}\label{scenariusz-b-ransomware}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{NATYCHMIASTOWO} odłącz zainfekowane urządzenie od sieci (kabel
+  + WiFi)
+\item
+  \textbf{NIE PŁACIĆ OKUPU} bez konsultacji z prawnikiem i
+  ubezpieczycielem
+\item
+  Uruchom procedurę DRP-011
+\item
+  Zgłoś do Policji i CERT Polska (cert.pl)
+\item
+  Zidentyfikuj wektor ataku i załataj podatność
+\end{itemize}
+
+\subsubsection{Scenariusz C: Wyciek danych
+klientów}\label{scenariusz-c-wyciek-danych-klientuxf3w}
+
+\begin{itemize}
+\tightlist
+\item
+  Zidentyfikuj jakie dane wyciekły i ile osób dotyczy
+\item
+  Ocena ryzyka wg RODO -- czy zgłosić do UODO (72h)?
+\item
+  Powiadom poszkodowanych klientów
+\item
+  Zabezpiecz dowody (nie usuwaj logów)
+\end{itemize}
+
+\subsection{5. Rejestr incydentów
+(szablon)}\label{rejestr-incydentuxf3w-szablon}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*220-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*180-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Data/Czas & Opis incydentu & Działania podjęte & Status & Zamknięty \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\underline{\hspace{2cm}} &
+\underline{\hspace{4cm}} &
+\underline{\hspace{4cm}} & {[} {]} Otwarty &
+\underline{\hspace{2cm}} \\
+\underline{\hspace{2cm}} &
+\underline{\hspace{4cm}} &
+\underline{\hspace{4cm}} & {[} {]} Otwarty &
+\underline{\hspace{2cm}} \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+\end{document}
