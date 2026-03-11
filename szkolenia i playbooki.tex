@@ -86,6 +86,8 @@ pracownicy)}\label{szkolenie-bazowe-nowi-pracownicy}
 \item
   Zawartość: polityki IT, hasła i MFA, phishing i inżynieria społeczna,
   obsługa incydentów, RODO, bezpieczna praca zdalna
+  Dodatkowy moduł dla pracowników księgowości zawierający:
+  obsługę faktur, przelewów, deklaracji podatkowych oraz komunikacji z klientami.
 \item
   Wymagany wynik quizu: min. \textbf{80\%}
 \item
@@ -104,7 +106,7 @@ miesięcy)}\label{szkolenie-odux15bwieux17cajux105ce-co-12-miesiux119cy}
   Format: e-learning lub warsztat stacjonarny
 \item
   Zawartość: nowe zagrożenia roku, przegląd incydentów z minionego roku,
-  nowe procedury
+  nowe procedury.
 \item
   Wymagany wynik testu: min. \textbf{80\%}
 \end{itemize}
@@ -122,13 +124,12 @@ Parametr & Opis & Wartość docelowa \\
 \bottomrule\noalign{}
 \endlastfoot
 Częstotliwość & Niezapowiedziane testy & Co kwartał (minimum) \\
-Narzędzie & Platforma do symulacji phishingu & {[}NAZWA -- np.
-GoPhish/Cofense{]} \\
+Narzędzie & Platforma do symulacji phishingu & GoPhish \\
 Próg alertu & Odsetek kliknięć w link & Cel: \textless10\%
 pracowników \\
 Reakcja na kliknięcie & Natychmiastowe szkolenie remediacyjne &
 Obowiązkowe w ciągu 7 dni \\
-Raportowanie & Anonimowe wyniki zbiorcze & Co kwartał -- kierownik \\
+Raportowanie & Anonimowe wyniki zbiorcze & Co kwartał -- Administrator IT \\
 \end{longtable}
 
 \subsection{3. Przegląd Playbooków i
@@ -355,8 +356,22 @@ klientów}\label{scenariusz-c-wyciek-danych-klientuxf3w}
   Zabezpiecz dowody (nie usuwaj logów)
 \end{itemize}
 
-\subsection{5. Rejestr incydentów
-(szablon)}\label{rejestr-incydentuxf3w-szablon}
+\subsubsection{Scenariusz D: Fraud finansowy / zmiana rachunku}\label{scenariusz-D-kompromitacja-systemu}
+\begin{itemize}
+\tightlist
+\item
+\textbf{NATYCHMIASTOWO} wstrzymaj przelew
+\item
+Skontaktować się z bankiem
+\item
+Skontaktowanie się z klientem
+\item
+Zabezpiecz korespondencję e-mail
+\item
+Zgłoś incydent do Policji
+\item 
+Zarejestruj incydent w Rejestrze Incydentów
+\end{itemize}
 
 \begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*220-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*180-2\tabcolsep\relax}@{}}
 \toprule\noalign{}
