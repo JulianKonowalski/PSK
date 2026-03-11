@@ -1,0 +1,1749 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Pakiety podstawowe ---
+\usepackage[polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{calc}
+% Pandoc-generated macro
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% --- Konfiguracja strony ---
+\geometry{margin=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+% --- Kolorystyka ---
+\definecolor{NavyBlue}{RGB}{31, 56, 100}
+\definecolor{MidBlue}{RGB}{46, 117, 182}
+\definecolor{LightBlue}{RGB}{214, 228, 240}
+\definecolor{Gray}{RGB}{242, 242, 242}
+
+% --- Stylizacja nagłówków ---
+\titleformat{\section}
+  {\color{NavyBlue}\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[1.5pt]}]
+
+\titleformat{\subsection}
+  {\color{MidBlue}\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% --- Nagłówek i stopka ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small \color{gray} Pakiet Dokumentacji Cyberbezpieczeństwa v1.0}
+\fancyhead[R]{\small \color{gray} [NAZWA FIRMY]}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\small \color{gray} POUFNE}
+
+% --- Ustawienia tabel ---
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{4pt}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+% --- STRONA TYTUŁOWA ---
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\huge\bfseries\color{NavyBlue} [NAZWA FIRMY KSIĘGOWEJ] \par}
+    \vspace{1cm}
+    {\Large\bfseries\color{MidBlue} PAKIET POLITYK I PROCEDUR\\CYBERBEZPIECZEŃSTWA \par}
+    \vspace{2cm}
+    
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|>{\color{NavyBlue}\bfseries}l|l|}
+            \hline
+            Właściciel dokumentu: & Administrator / Właściciel firmy \\ \hline
+            Status: & SZABLON -- do wypełnienia \\ \hline
+            Data utworzenia: & [DATA] \\ \hline
+            Następny przegląd: & [DATA + 12 MIESIĘCY] \\ \hline
+            Wersja: & 1.0 \\ \hline
+            Klasyfikacja: & POUFNE -- wewnętrzne \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \vfill
+    \begin{quote}
+        \centering
+        \textit{\color{red} Dokument zawiera informacje poufne. Dystrybucja wyłącznie dla upoważnionych pracowników.}
+    \end{quote}
+    \vspace*{1cm}
+\end{titlepage}
+
+\newpage
+
+
+
+
+\section{SPIS TREŚCI}\label{spis-treux15bci}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*430-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Polityka przechowywania i zarządzania danymi (RODO) & POL-001 \\
+2 & Procedura weryfikacji certyfikacji sprzętu & PROC-002 \\
+3 & Procedura weryfikacji certyfikacji oprogramowania & PROC-003 \\
+4 & Procedura zabezpieczania infrastruktury & PROC-004 \\
+5 & Polityka dostępu i monitorowania użytkowników & POL-005 \\
+6 & Procedura onboardingu nowych użytkowników & PROC-006 \\
+7 & Procedura offboardingu odchodzących użytkowników & PROC-007 \\
+8 & Procedura szkoleń i weryfikacji wiedzy & PROC-008 \\
+9 & Polityka monitorowania i audytowania infrastruktury & POL-009 \\
+10 & Playbook sytuacji nietypowych (Incident Response) & PLAY-010 \\
+11 & Plan odtwarzania po katastrofie (Disaster Recovery) & DRP-011 \\
+12 & Plan ciągłego doskonalenia cyberbezpieczeństwa & PLAN-012 \\
+\end{longtable}
+
+\phantomsection\label{doc1}
+POL-001
+
+\section{POLITYKA PRZECHOWYWANIA I ZARZĄDZANIA DANYMI
+(RODO)}\label{polityka-przechowywania-i-zarzux105dzania-danymi-rodo}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Data wejścia w życie: & {[}DATA{]} \\
+Właściciel: & Właściciel firmy / Inspektor Ochrony Danych (IOD) \\
+Dotyczy: & Wszyscy pracownicy, współpracownicy, podwykonawcy \\
+Przegląd: & Co 12 miesięcy lub po istotnej zmianie prawnej \\
+\end{longtable}
+
+\subsection{1. Cel i zakres}\label{cel-i-zakres}
+
+Niniejsza polityka określa zasady gromadzenia, przetwarzania,
+przechowywania i usuwania danych osobowych oraz danych finansowych
+klientów w {[}NAZWA FIRMY{]}, zgodnie z Rozporządzeniem RODO (UE)
+2016/679 oraz polskim prawem krajowym.
+
+Polityka obejmuje: dane osobowe klientów i pracowników, dane finansowe i
+księgowe, dokumenty elektroniczne i papierowe, systemy informatyczne i
+nośniki danych.
+
+\subsection{2. Podstawy prawne przetwarzania
+danych}\label{podstawy-prawne-przetwarzania-danych}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*430-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Kategoria danych & Cel przetwarzania & Podstawa prawna (RODO) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Dane klientów (osoby fizyczne) & Wykonanie usług księgowych & Art. 6
+ust. 1 lit. b) i c) \\
+Dane pracowników & Realizacja umowy o pracę & Art. 6 ust. 1 lit. b) i
+c) \\
+Dane do celów podatkowych & Obowiązek prawny (Ordynacja podatkowa) &
+Art. 6 ust. 1 lit. c) \\
+Dane marketingowe & Zgoda osoby & Art. 6 ust. 1 lit. a) \\
+\end{longtable}
+
+\subsection{3. Okresy przechowywania
+danych}\label{okresy-przechowywania-danych}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*430-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Rodzaj dokumentu / danych & Okres przechowywania & Podstawa prawna \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Księgi rachunkowe i dokumenty finansowe & 5 lat od zakończenia roku
+obrotowego & Ustawa o rachunkowości art. 74 \\
+Deklaracje podatkowe & 5 lat od upływu terminu płatności podatku &
+Ordynacja podatkowa art. 70 \\
+Umowy z klientami & 10 lat od wygaśnięcia umowy & Kodeks cywilny --
+przedawnienie \\
+Akta pracownicze & 10 lat (pracownicy od 01.01.2019) & Ustawa
+archiwalna \\
+Dane marketingowe (zgoda) & Do cofnięcia zgody + 1 rok & RODO art. 7 \\
+Logi systemowe i dostępu & 12 miesięcy & Polityka wewnętrzna \\
+Kopie zapasowe (backup) & 90 dni (rotacyjnie) & Polityka wewnętrzna \\
+\end{longtable}
+
+\subsection{4. Prawa osób, których dane
+dotyczą}\label{prawa-osuxf3b-ktuxf3rych-dane-dotyczux105}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Prawo dostępu} (art. 15 RODO) -- odpowiedź w ciągu 30 dni
+\item
+  \textbf{Prawo do sprostowania} (art. 16 RODO)
+\item
+  \textbf{Prawo do usunięcia} „prawo do bycia zapomnianym" (art. 17
+  RODO)
+\item
+  \textbf{Prawo do ograniczenia przetwarzania} (art. 18 RODO)
+\item
+  \textbf{Prawo do przenoszenia danych} (art. 20 RODO)
+\item
+  \textbf{Prawo do sprzeciwu} (art. 21 RODO)
+\end{itemize}
+
+Punkt kontaktowy dla wniosków: \textbf{{[}EMAIL/ADRES{]}} \textbar{}
+Termin rozpatrzenia: 30 dni (możliwość przedłużenia o 60 dni).
+
+\subsection{5. Bezpieczeństwo danych}\label{bezpieczeux144stwo-danych}
+
+\begin{itemize}
+\tightlist
+\item
+  Dane przetwarzane wyłącznie na zatwierdzonych urządzeniach i
+  platformach
+\item
+  Szyfrowanie danych w spoczynku (AES-256) i podczas transmisji (TLS
+  1.2+)
+\item
+  Dostęp na zasadzie „najmniejszych uprawnień" (least privilege)
+\item
+  Regularne kopie zapasowe wg polityki backup
+\item
+  Pseudonimizacja danych tam, gdzie to możliwe
+\end{itemize}
+
+\subsection{6. Naruszenie ochrony danych --
+procedura}\label{naruszenie-ochrony-danych-procedura}
+
+\begin{enumerate}
+\tightlist
+\item
+  Wykrycie naruszenia → natychmiastowe poinformowanie przełożonego /
+  właściciela
+\item
+  Ocena ryzyka -- czy naruszenie stwarza ryzyko dla praw osób?
+\item
+  \textbf{Zgłoszenie do UODO} -- w ciągu \textbf{72 godzin} od wykrycia
+  (jeśli ryzyko wystąpiło)
+\item
+  Powiadomienie osób poszkodowanych -- bez zbędnej zwłoki (jeśli wysokie
+  ryzyko)
+\item
+  Dokumentacja incydentu -- rejestr naruszeń (wewnętrzny)
+\end{enumerate}
+
+\subsection{7. Powierzenie danych podmiotom
+zewnętrznym}\label{powierzenie-danych-podmiotom-zewnux119trznym}
+
+Każde powierzenie danych wymaga zawarcia \textbf{umowy powierzenia
+przetwarzania (DPA)}. Lista zatwierdzonych procesorów:
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*430-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Procesor & Zakres przetwarzania & Umowa DPA \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{[}NAZWA DOSTAWCY CHMURY{]} & Przechowywanie plików & {[} {]} TAK ~{[}
+{]} NIE ~Data: \underline{\hspace{2cm}} \\
+{[}BIURO IT / ZEWNĘTRZNY IT{]} & Wsparcie informatyczne & {[} {]} TAK
+~{[} {]} NIE ~Data: \underline{\hspace{2cm}} \\
+{[}INNE{]} & \underline{\hspace{3cm}} & {[} {]} TAK ~{[}
+{]} NIE ~Data: \underline{\hspace{2cm}} \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc2}
+PROC-002
+
+\section{PROCEDURA WERYFIKACJI CERTYFIKACJI I BEZPIECZEŃSTWA
+SPRZĘTU}\label{procedura-weryfikacji-certyfikacji-i-bezpieczeux144stwa-sprzux119tu}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Komputery, laptopy, switche, routery, drukarki, UPS \\
+Odpowiedzialny: & Administrator IT / Właściciel \\
+Częstotliwość: & Przy zakupie + coroczna weryfikacja \\
+\end{longtable}
+
+\subsection{1. Wymagania przy zakupie nowego
+sprzętu}\label{wymagania-przy-zakupie-nowego-sprzux119tu}
+
+\subsubsection{1.1 Komputery i laptopy}\label{komputery-i-laptopy}
+
+\begin{itemize}
+\tightlist
+\item
+  Zakup wyłącznie od autoryzowanych dystrybutorów (faktura VAT,
+  gwarancja producenta)
+\item
+  Wymagane certyfikaty: CE, FCC, RoHS
+\item
+  Wymagania minimalne: TPM 2.0, Secure Boot, szyfrowanie dysku
+  (BitLocker/FileVault)
+\item
+  Zatwierdzenie przez administratora IT przed zakupem
+\item
+  Rejestracja w inwentarzu sprzętowym -- numer seryjny, data zakupu,
+  użytkownik
+\end{itemize}
+
+\subsubsection{1.2 Routery i switche}\label{routery-i-switche}
+
+\begin{itemize}
+\tightlist
+\item
+  Zakup od renomowanych producentów (Cisco, Fortinet, Ubiquiti, TP-Link
+  Business)
+\item
+  Zmiana domyślnych haseł administratora -- bezpośrednio po rozpakowaniu
+\item
+  Wyłączenie zdalnego zarządzania przez WAN (jeśli niepotrzebne)
+\item
+  Włączenie automatycznych aktualizacji firmware lub harmonogram
+  ręcznych aktualizacji
+\item
+  Dokumentacja konfiguracji sieciowej przechowywana offline
+  (zaszyfrowana)
+\end{itemize}
+
+\subsubsection{1.3 Drukarki i urządzenia
+wielofunkcyjne}\label{drukarki-i-urzux105dzenia-wielofunkcyjne}
+
+\begin{itemize}
+\tightlist
+\item
+  Zmiana domyślnych danych logowania administratora
+\item
+  Wyłączenie usług sieciowych nieużywanych (FTP, Telnet, HTTP → wymóg
+  HTTPS)
+\item
+  Szyfrowanie połączenia (TLS) dla drukowania sieciowego
+\item
+  Włączenie bezpiecznego wydruku (PIN przed wydrukiem)
+\item
+  Regularne czyszczenie pamięci wewnętrznej drukarki
+\end{itemize}
+
+\subsection{2. Harmonogram weryfikacji -- lista
+kontrolna}\label{harmonogram-weryfikacji-lista-kontrolna}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*430-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Czynność weryfikacyjna & Częstotliwość & Status {[} {]} / Data \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Aktualizacja firmware routerów i switchy & Co 3 miesiące & {[} {]}
+\underline{\hspace{2cm}} \\
+Weryfikacja aktywnego oprogramowania antywirusowego & Co miesiąc & {[}
+{]} \underline{\hspace{2cm}} \\
+Skan podatności sieci & Co 6 miesięcy & {[} {]}
+\underline{\hspace{2cm}} \\
+Przegląd listy urządzeń podłączonych do sieci & Co miesiąc & {[} {]}
+\underline{\hspace{2cm}} \\
+Weryfikacja szyfrowania dysków (BitLocker/FileVault) & Co 6 miesięcy &
+{[} {]} \underline{\hspace{2cm}} \\
+Aktualizacja inwentarza sprzętowego & Co 12 miesięcy & {[} {]}
+\underline{\hspace{2cm}} \\
+Przegląd konfiguracji firewall & Co 6 miesięcy & {[} {]}
+\underline{\hspace{2cm}} \\
+\end{longtable}
+
+\subsection{3. Rejestr sprzętu
+(szablon)}\label{rejestr-sprzux119tu-szablon}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*180-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*170-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*170-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*170-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*170-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*140-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Urządzenie & Nr seryjny & Użytkownik & Data zakupu & Ostatni przegląd &
+Status \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}} & {[} {]} OK \\
+\underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}} & {[} {]} OK \\
+\underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}} & {[} {]} OK \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc3}
+PROC-003
+
+\section{PROCEDURA WERYFIKACJI CERTYFIKACJI I BEZPIECZEŃSTWA
+OPROGRAMOWANIA}\label{procedura-weryfikacji-certyfikacji-i-bezpieczeux144stwa-oprogramowania}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Systemy operacyjne, aplikacje biznesowe, oprogramowanie
+księgowe, przeglądarki \\
+Odpowiedzialny: & Administrator IT \\
+Częstotliwość: & Przy instalacji + kwartalny przegląd \\
+\end{longtable}
+
+\subsection{1. Lista Zatwierdzonego Oprogramowania
+(LZO)}\label{lista-zatwierdzonego-oprogramowania-lzo}
+
+W firmie dopuszczone jest wyłącznie oprogramowanie z LZO. Instalacja
+oprogramowania spoza listy wymaga pisemnej zgody administratora IT.
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Kategoria & Zatwierdzone rozwiązanie & Cel & Licencja OK \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+System operacyjny & Windows 11 Pro / macOS 13+ & Stacje robocze & {[}
+{]} TAK \\
+Oprogramowanie księgowe & {[}NAZWA -- np. Insert/Symfonia{]} & Główna
+aplikacja & {[} {]} TAK \\
+Antywirus/EDR & {[}NAZWA{]} & Ochrona endpoint & {[} {]} TAK \\
+VPN & {[}NAZWA{]} & Zdalny dostęp & {[} {]} TAK \\
+Przeglądarka & Chrome / Firefox (aktualna wersja) & Internet & {[} {]}
+TAK \\
+Office & Microsoft 365 Business & Praca biurowa & {[} {]} TAK \\
+Manager haseł & {[}NAZWA -- np. Bitwarden/1Password{]} & Zarządzanie
+hasłami & {[} {]} TAK \\
+\end{longtable}
+
+\subsection{2. Procedura instalacji nowego
+oprogramowania}\label{procedura-instalacji-nowego-oprogramowania}
+
+\begin{enumerate}
+\tightlist
+\item
+  Wniosek pracownika do administratora IT (forma pisemna/email)
+\item
+  Ocena bezpieczeństwa: źródło, producent, recenzje, sprawdzenie CVE
+\item
+  Weryfikacja licencji -- oprogramowanie komercyjne lub Open Source z
+  zatwierdzoną licencją
+\item
+  Instalacja przez administratora lub z jego zgodą (nie przez
+  użytkownika)
+\item
+  Dodanie do LZO i dokumentacja
+\item
+  Monitorowanie przez 30 dni po instalacji
+\end{enumerate}
+
+\subsection{3. Aktualizacje i łatki
+bezpieczeństwa}\label{aktualizacje-i-ux142atki-bezpieczeux144stwa}
+
+\begin{itemize}
+\tightlist
+\item
+  Aktualizacje systemu operacyjnego: automatyczne lub w ciągu \textbf{72
+  godzin} od wydania łatki krytycznej
+\item
+  Oprogramowanie biznesowe: aktualizacja w ciągu \textbf{14 dni} od
+  wydania
+\item
+  Przeglądarki i wtyczki: automatyczne aktualizacje włączone
+\item
+  Oprogramowanie bez aktualizacji od \textgreater12 miesięcy -- ocena i
+  ewentualne odinstalowanie
+\end{itemize}
+
+\subsection{4. Lista kontrolna -- kwartalny przegląd
+oprogramowania}\label{lista-kontrolna-kwartalny-przeglux105d-oprogramowania}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*430-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Czynność & Termin & Status \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Weryfikacja wersji systemu operacyjnego na wszystkich komputerach & Co
+kwartał & {[} {]} \underline{\hspace{2cm}} \\
+Przegląd listy zainstalowanego oprogramowania (porównanie z LZO) & Co
+kwartał & {[} {]} \underline{\hspace{2cm}} \\
+Sprawdzenie dat wygaśnięcia licencji & Co kwartał & {[} {]}
+\underline{\hspace{2cm}} \\
+Weryfikacja bazy sygnatur antywirusa & Co miesiąc & {[} {]}
+\underline{\hspace{2cm}} \\
+Skan podatności zainstalowanego oprogramowania (CVE) & Co 6 miesięcy &
+{[} {]} \underline{\hspace{2cm}} \\
+Usunięcie nieautoryzowanego lub nieaktualnego SW & Bieżąco & {[} {]}
+\underline{\hspace{2cm}} \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc4}
+PROC-004
+
+\section{PROCEDURA ZABEZPIECZANIA INFRASTRUKTURY PRZED
+ATAKAMI}\label{procedura-zabezpieczania-infrastruktury-przed-atakami}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Sieć firmowa, serwery, stacje robocze, dostęp zdalny \\
+Odpowiedzialny: & Administrator IT \\
+Przegląd: & Co 6 miesięcy \\
+\end{longtable}
+
+\subsection{1. Architektura sieciowa}\label{architektura-sieciowa}
+
+\begin{itemize}
+\tightlist
+\item
+  Segmentacja sieci: sieć biurowa (LAN), sieć dla gości (Guest WiFi),
+  VLAN dla serwerów -- odseparowane
+\item
+  Firewall na granicy sieci -- polityka „odmów wszystkiego, zezwalaj na
+  wyjątki"
+\item
+  Brak bezpośredniego dostępu RDP/SSH z Internetu bez VPN
+\item
+  Dokumentacja topologii sieci aktualizowana przy każdej zmianie
+\end{itemize}
+
+\subsection{2. Hasła i
+uwierzytelnianie}\label{hasux142a-i-uwierzytelnianie}
+
+\begin{itemize}
+\tightlist
+\item
+  Minimalna długość hasła: \textbf{12 znaków}
+\item
+  Złożoność: wielkie/małe litery, cyfry, znaki specjalne
+\item
+  Zmiana haseł: co 90 dni (konta uprzywilejowane) / 180 dni
+  (standardowe)
+\item
+  Obowiązkowe \textbf{MFA} dla: kont administratora, VPN, poczty e-mail,
+  systemów księgowych
+\item
+  Zarządzanie hasłami przez zatwierdzonego managera haseł (nie Excel,
+  nie kartka!)
+\item
+  Blokada konta po \textbf{5 błędnych próbach} logowania
+\end{itemize}
+
+\subsection{3. Dostęp zdalny}\label{dostux119p-zdalny}
+
+\begin{itemize}
+\tightlist
+\item
+  Zdalny dostęp wyłącznie przez VPN (z MFA)
+\item
+  Lista zatwierdzonych użytkowników VPN -- przegląd co 3 miesiące
+\item
+  Sesje VPN z limitem czasu (timeout po 30 min bezczynności)
+\item
+  Zakaz używania publicznych sieci WiFi do pracy z danymi klientów bez
+  VPN
+\end{itemize}
+
+\subsection{4. Ochrona przed złośliwym
+oprogramowaniem}\label{ochrona-przed-zux142oux15bliwym-oprogramowaniem}
+
+\begin{itemize}
+\tightlist
+\item
+  Oprogramowanie EDR/AV na każdym urządzeniu końcowym -- obowiązkowo
+\item
+  Blokowanie wykonywania skryptów z makrami w dokumentach Office
+  (polityka grupowa)
+\item
+  Filtrowanie DNS z blokowaniem złośliwych domen
+\item
+  Polityka białej listy aplikacji (Application Whitelisting) na stacjach
+  roboczych
+\item
+  Skanowanie załączników e-mail przez antywirus
+\end{itemize}
+
+\subsection{5. Polityka kopii zapasowych
+(3-2-1)}\label{polityka-kopii-zapasowych-3-2-1}
+
+Reguła 3-2-1: \textbf{3 kopie}, na \textbf{2 różnych nośnikach}, w tym
+\textbf{1 offsite}. Testowanie przywracania: co kwartał.
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Rodzaj backup & Częstotliwość & Przechowywanie & Szyfrowanie \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Pełny backup serwerów & Co tydzień (niedziela) & 90 dni & {[} {]} TAK \\
+Przyrostowy backup plików & Codziennie & 30 dni & {[} {]} TAK \\
+Backup baz danych (księgowość) & Codziennie (noc) & 90 dni & {[} {]}
+TAK \\
+Backup poza siedzibą (offsite) & Co tydzień & 12 miesięcy & {[} {]}
+TAK \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc5}
+POL-005
+
+\section{POLITYKA DOSTĘPU I MONITOROWANIA
+UŻYTKOWNIKÓW}\label{polityka-dostux119pu-i-monitorowania-uux17cytkownikuxf3w}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Wszyscy użytkownicy systemów informatycznych firmy \\
+Odpowiedzialny: & Administrator IT / Kierownik \\
+Przegląd: & Co 12 miesięcy lub przy zmianie struktury organizacyjnej \\
+\end{longtable}
+
+\subsection{1. Zasada najniższych
+uprawnień}\label{zasada-najniux17cszych-uprawnieux144}
+
+Każdy użytkownik otrzymuje dostęp wyłącznie do zasobów niezbędnych do
+wykonywania swoich obowiązków. Uprawnienia są nadawane przez
+administratora na pisemny wniosek kierownika.
+
+\subsection{2. Macierz dostępu --
+szablon}\label{macierz-dostux119pu-szablon}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*220-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*180-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Zasób / System & Właściciel & Księgowy & Asystent & Gość/Klient \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+System księgowy (pełny) & Pełny & Pełny & Odczyt & Brak \\
+Dane klientów (CRM) & Pełny & Odczyt/Zapis & Odczyt & Brak \\
+Dokumenty finansowe (serwer) & Pełny & Swoje teczki & Brak & Brak \\
+Poczta e-mail firmowa & Pełny & Własna skrzynka & Własna skrzynka &
+Brak \\
+Internet / VPN & Pełny & Tak & Ograniczony & Brak \\
+Panel administracyjny IT & Pełny & Brak & Brak & Brak \\
+\end{longtable}
+
+\subsection{3. Monitorowanie działań
+użytkowników}\label{monitorowanie-dziaux142aux144-uux17cytkownikuxf3w}
+
+Firma zastrzega sobie prawo do monitorowania korzystania z systemów
+informatycznych. Użytkownicy są poinformowani o fakcie monitorowania
+(klauzula w umowie i regulaminie IT).
+
+Monitorowane działania obejmują: logowania i wylogowania, dostęp do
+plików i baz danych, wysyłane e-maile z firmowych kont, dostęp do
+Internetu, drukowanie dokumentów, podpinane urządzenia zewnętrzne (USB).
+
+Dane z monitorowania są przechowywane przez 12 miesięcy i dostępne
+wyłącznie dla administratora IT i właściciela firmy.
+
+\subsection{4. Akceptowalne użycie zasobów
+IT}\label{akceptowalne-uux17cycie-zasobuxf3w-it}
+
+\subsubsection{Dozwolone:}\label{dozwolone}
+
+\begin{itemize}
+\tightlist
+\item
+  Używanie sprzętu i oprogramowania do celów służbowych
+\item
+  Ograniczone użycie prywatne niezakłócające pracy
+\end{itemize}
+
+\subsubsection{Zabronione:}\label{zabronione}
+
+\begin{itemize}
+\tightlist
+\item
+  Instalacja nieautoryzowanego oprogramowania
+\item
+  Podłączanie prywatnych nośników USB bez zgody administratora
+\item
+  Udostępnianie danych logowania innym osobom
+\item
+  Obchodzenie zabezpieczeń (wyłączanie antywirusa, omijanie VPN)
+\item
+  Przesyłanie danych klientów na prywatne skrzynki e-mail / chmury
+\item
+  Używanie służbowych kont do celów prywatnych / sprzedażowych
+\end{itemize}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc6}
+PROC-006
+
+\section{PROCEDURA ONBOARDINGU NOWYCH UŻYTKOWNIKÓW
+(IT)}\label{procedura-onboardingu-nowych-uux17cytkownikuxf3w-it}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Nowi pracownicy, stażyści, współpracownicy \\
+Odpowiedzialny: & Administrator IT + HR \\
+Termin realizacji: & Dzień przed lub w dniu pierwszego dnia pracy \\
+\end{longtable}
+
+\subsection{1. Lista kontrolna onboardingu
+IT}\label{lista-kontrolna-onboardingu-it}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\# & Czynność & Odpowiedzialny & Status / Data \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Odebranie wypełnionego wniosku o konto od kierownika & HR /
+Kierownik & {[} {]} \underline{\hspace{2cm}} \\
+2 & Utworzenie konta użytkownika w AD / systemie & Administrator IT &
+{[} {]} \underline{\hspace{2cm}} \\
+3 & Nadanie uprawnień wg macierzy dostępu (POL-005) & Administrator IT &
+{[} {]} \underline{\hspace{2cm}} \\
+4 & Konfiguracja MFA (telefon / aplikacja) & Administrator IT & {[} {]}
+\underline{\hspace{2cm}} \\
+5 & Wydanie sprzętu -- laptop, akcesoria (protokół zdawczo-odbiorczy) &
+Administrator IT & {[} {]} \underline{\hspace{2cm}} \\
+6 & Instalacja i konfiguracja wymaganego oprogramowania & Administrator
+IT & {[} {]} \underline{\hspace{2cm}} \\
+7 & Konfiguracja poczty e-mail i podpisu & Administrator IT & {[} {]}
+\underline{\hspace{2cm}} \\
+8 & Podłączenie do VPN + test połączenia & Administrator IT & {[} {]}
+\underline{\hspace{2cm}} \\
+9 & Zapoznanie z Polityką Bezpieczeństwa IT (POL-001, POL-005) &
+Administrator IT & {[} {]} \underline{\hspace{2cm}} \\
+10 & Szkolenie wprowadzające z cyberbezpieczeństwa (PROC-008) &
+Administrator IT & {[} {]} \underline{\hspace{2cm}} \\
+11 & Podpisanie Oświadczenia o zapoznaniu z politykami IT & HR /
+Pracownik & {[} {]} \underline{\hspace{2cm}} \\
+12 & Podpisanie Oświadczenia o poufności (NDA / klauzula RODO) & HR /
+Pracownik & {[} {]} \underline{\hspace{2cm}} \\
+13 & Test dostępu -- potwierdzenie że wszystko działa & Nowy pracownik &
+{[} {]} \underline{\hspace{2cm}} \\
+\end{longtable}
+
+\subsection{2. Oświadczenie o zapoznaniu z politykami IT (do
+podpisania)}\label{oux15bwiadczenie-o-zapoznaniu-z-politykami-it-do-podpisania}
+
+Ja, niżej podpisany/a {~}, potwierdzam, że:
+
+\begin{enumerate}
+\tightlist
+\item
+  Zapoznałem/am się z Polityką Bezpieczeństwa IT firmy {[}NAZWA{]}
+\item
+  Zostałem/am poinformowany/a o fakcie monitorowania aktywności w
+  systemach IT
+\item
+  Zobowiązuję się do przestrzegania zasad określonych w politykach
+\item
+  Przyjmuję do wiadomości, że naruszenie polityk może skutkować
+  konsekwencjami służbowymi
+\end{enumerate}
+
+Data: \underline{\hspace{3cm}}
+
+Podpis pracownika: \underline{\hspace{3cm}}
+
+Podpis przełożonego: \underline{\hspace{3cm}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc7}
+PROC-007
+
+\section{PROCEDURA OFFBOARDINGU ODCHODZĄCYCH UŻYTKOWNIKÓW
+(IT)}\label{procedura-offboardingu-odchodzux105cych-uux17cytkownikuxf3w-it}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Pracownicy, stażyści, współpracownicy kończący współpracę \\
+Odpowiedzialny: & Administrator IT + HR \\
+Termin realizacji: & W dniu lub natychmiast po ostatnim dniu pracy \\
+\end{longtable}
+
+\textbf{UWAGA:} Konta należy dezaktywować w dniu zakończenia współpracy -- nie
+wcześniej, nie później (ryzyko wycieku po odejściu lub brak dostępu w
+ostatnim dniu).
+
+\subsection{1. Lista kontrolna offboardingu
+IT}\label{lista-kontrolna-offboardingu-it}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\# & Czynność & Odpowiedzialny & Status / Data \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Wyłączenie konta użytkownika (nie usuwanie -- archiwum 90 dni) &
+Administrator IT & {[} {]} \underline{\hspace{2cm}} \\
+2 & Zmiana haseł do współdzielonych kont (jeśli dotyczy) & Administrator
+IT & {[} {]} \underline{\hspace{2cm}} \\
+3 & Odwołanie dostępu VPN & Administrator IT & {[} {]}
+\underline{\hspace{2cm}} \\
+4 & Usunięcie / dezaktywacja tokena MFA & Administrator IT & {[} {]}
+\underline{\hspace{2cm}} \\
+5 & Archiwizacja skrzynki e-mail (90 dni przekierowania do przełożonego)
+& Administrator IT & {[} {]} \underline{\hspace{2cm}} \\
+6 & Przejęcie plików służbowych (przekazanie kierownikowi) & Kierownik &
+{[} {]} \underline{\hspace{2cm}} \\
+7 & Zwrot sprzętu (laptop, telefon, klucze, karty dostępu) -- protokół &
+HR & {[} {]} \underline{\hspace{2cm}} \\
+8 & Wyczyszczenie danych z urządzeń zwracanych (certyfikowane usunięcie)
+& Administrator IT & {[} {]} \underline{\hspace{2cm}} \\
+9 & Usunięcie z list mailingowych i grup & Administrator IT & {[} {]}
+\underline{\hspace{2cm}} \\
+10 & Odwołanie dostępu do usług zewnętrznych (chmura, narzędzia SaaS) &
+Administrator IT & {[} {]} \underline{\hspace{2cm}} \\
+11 & Podpisanie oświadczenia o zwrocie danych i poufności & HR /
+Pracownik & {[} {]} \underline{\hspace{2cm}} \\
+12 & Aktualizacja macierzy dostępu i inwentarza sprzętowego &
+Administrator IT & {[} {]} \underline{\hspace{2cm}} \\
+\end{longtable}
+
+\subsection{2. Oświadczenie o zwrocie danych i poufności
+(Offboarding)}\label{oux15bwiadczenie-o-zwrocie-danych-i-poufnoux15bci-offboarding}
+
+Ja, niżej podpisany/a {~}, potwierdzam, że:
+
+\begin{enumerate}
+\tightlist
+\item
+  Zwróciłem/am cały sprzęt firmowy (wymieniony w załączniku protokołu)
+\item
+  Usunąłem/am wszelkie dane firmowe z urządzeń prywatnych
+\item
+  Nie posiadam kopii danych klientów, dokumentów finansowych ani haseł
+  firmowych
+\item
+  Zobowiązuję się do zachowania poufności przez {[}3/5{]} lat po
+  zakończeniu współpracy
+\item
+  Jestem świadomy/a konsekwencji prawnych naruszenia powyższych
+  zobowiązań
+\end{enumerate}
+
+Data: \underline{\hspace{3cm}}
+
+Podpis pracownika: \underline{\hspace{3cm}}
+
+Podpis HR / przełożonego: \underline{\hspace{3cm}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc8}
+PROC-008
+
+\section{PROCEDURA SZKOLEŃ I WERYFIKACJI WIEDZY Z
+CYBERBEZPIECZEŃSTWA}\label{procedura-szkoleux144-i-weryfikacji-wiedzy-z-cyberbezpieczeux144stwa}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Wszyscy pracownicy i współpracownicy \\
+Odpowiedzialny: & Administrator IT + Właściciel \\
+Częstotliwość: & Szkolenie bazowe: onboarding \textbar{} Odświeżające:
+co 12 miesięcy \\
+\end{longtable}
+
+\subsection{1. Program szkoleń}\label{program-szkoleux144}
+
+\subsubsection{Szkolenie bazowe (nowi
+pracownicy)}\label{szkolenie-bazowe-nowi-pracownicy}
+
+\begin{itemize}
+\tightlist
+\item
+  Czas trwania: min. 2 godziny
+\item
+  Format: prezentacja + omówienie + quiz
+\item
+  Zawartość: polityki IT, hasła i MFA, phishing i inżynieria społeczna,
+  obsługa incydentów, RODO, bezpieczna praca zdalna
+\item
+  Wymagany wynik quizu: min. \textbf{80\%}
+\item
+  Powtarzanie przy wyniku poniżej 80\% (max 3 podejścia, potem szkolenie
+  indywidualne)
+\end{itemize}
+
+\subsubsection{Szkolenie odświeżające (co 12
+miesięcy)}\label{szkolenie-odux15bwieux17cajux105ce-co-12-miesiux119cy}
+
+\begin{itemize}
+\tightlist
+\item
+  Czas trwania: min. 1 godzina
+\item
+  Format: e-learning lub warsztat stacjonarny
+\item
+  Zawartość: nowe zagrożenia roku, przegląd incydentów z minionego roku,
+  nowe procedury
+\item
+  Wymagany wynik testu: min. \textbf{80\%}
+\end{itemize}
+
+\subsection{2. Testy phishingowe}\label{testy-phishingowe}
+
+Firma przeprowadza symulowane ataki phishingowe w celu weryfikacji
+świadomości pracowników:
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*430-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Parametr & Opis & Wartość docelowa \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Częstotliwość & Niezapowiedziane testy & Co kwartał (minimum) \\
+Narzędzie & Platforma do symulacji phishingu & {[}NAZWA -- np.
+GoPhish/Cofense{]} \\
+Próg alertu & Odsetek kliknięć w link & Cel: \textless10\%
+pracowników \\
+Reakcja na kliknięcie & Natychmiastowe szkolenie remediacyjne &
+Obowiązkowe w ciągu 7 dni \\
+Raportowanie & Anonimowe wyniki zbiorcze & Co kwartał -- kierownik \\
+\end{longtable}
+
+\subsection{3. Przegląd Playbooków i
+ćwiczenia}\label{przeglux105d-playbookuxf3w-i-ux107wiczenia}
+
+\begin{itemize}
+\tightlist
+\item
+  Pracownicy zapoznają się z Playbookiem Incident Response (PLAY-010) co
+  12 miesięcy
+\item
+  Coroczne ćwiczenie tablicowe (tabletop exercise) -- symulacja
+  scenariusza incydentu
+\item
+  Udokumentowane wyniki ćwiczenia i wnioski (lessons learned)
+\end{itemize}
+
+\subsection{4. Rejestr szkoleń}\label{rejestr-szkoleux144}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*220-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*180-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Pracownik & Szkolenie & Data & Wynik testu & Certyfikat \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\underline{\hspace{3cm}} & Bazowe & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}}\% & {[} {]} TAK \\
+\underline{\hspace{3cm}} & Odświeżające & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}}\% & {[} {]} TAK \\
+\underline{\hspace{3cm}} & Phishing test & \underline{\hspace{2cm}}
+& Kliknął: {[} {]} TAK / NIE & N/A \\
+\underline{\hspace{3cm}} & Bazowe & \underline{\hspace{2cm}} &
+\underline{\hspace{2cm}}\% & {[} {]} TAK \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc9}
+POL-009
+
+\section{POLITYKA MONITOROWANIA I AUDYTOWANIA
+INFRASTRUKTURY}\label{polityka-monitorowania-i-audytowania-infrastruktury}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Wszystkie systemy IT firmy \\
+Odpowiedzialny: & Administrator IT \\
+Przegląd: & Co 12 miesięcy \\
+\end{longtable}
+
+\subsection{1. Logi systemowe -- co
+zbieramy}\label{logi-systemowe-co-zbieramy}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Źródło logów & Rodzaj zdarzeń & Retencja & Szyfrowanie \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Serwer Windows/Linux & Logowania, zmiany uprawnień, zdarzenia systemu &
+12 miesięcy & {[} {]} TAK \\
+Firewall / Router & Połączenia, blokady, anomalie ruchu & 12 miesięcy &
+{[} {]} TAK \\
+Poczta e-mail & Wysyłane/odebrane, spam, załączniki & 12 miesięcy & {[}
+{]} TAK \\
+System księgowy & Logowania, zmiany danych, generowanie raportów & 5 lat
+& {[} {]} TAK \\
+Stacje robocze (EDR) & Procesy, połączenia sieciowe, urządzenia USB & 90
+dni & {[} {]} TAK \\
+VPN & Sesje, adresy IP, czas trwania & 12 miesięcy & {[} {]} TAK \\
+\end{longtable}
+
+\subsection{2. Harmonogram przeglądów i
+audytów}\label{harmonogram-przeglux105duxf3w-i-audytuxf3w}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Rodzaj audytu & Częstotliwość & Odpowiedzialny & Ostatni / Następny \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Przegląd logów bezpieczeństwa & Codziennie & Admin IT & \underline{\hspace{2cm}} /
+\underline{\hspace{2cm}} \\
+Weryfikacja aktywnych kont użytkowników & Co miesiąc & Admin IT & \underline{\hspace{2cm}}
+/ \underline{\hspace{2cm}} \\
+Audyt uprawnień (równanie z macierzą) & Co kwartał & Admin IT & \underline{\hspace{2cm}} /
+\underline{\hspace{2cm}} \\
+Skan podatności sieci & Co 6 miesięcy & Admin IT / zewnętrzny & \underline{\hspace{2cm}} /
+\underline{\hspace{2cm}} \\
+Przegląd konfiguracji firewall & Co 6 miesięcy & Admin IT & \underline{\hspace{2cm}} /
+\underline{\hspace{2cm}} \\
+Pen-test (test penetracyjny) & Co 12 miesięcy & Zewnętrzny & \underline{\hspace{2cm}} /
+\underline{\hspace{2cm}} \\
+Audyt zgodności RODO & Co 12 miesięcy & IOD / zewnętrzny & \underline{\hspace{2cm}} /
+\underline{\hspace{2cm}} \\
+\end{longtable}
+
+\subsection{3. Alerty automatyczne --
+triggers}\label{alerty-automatyczne-triggers}
+
+\begin{itemize}
+\tightlist
+\item
+  Logowanie poza godzinami pracy (18:00--6:00 lub weekend) → alert
+  natychmiastowy
+\item
+  5+ nieudanych prób logowania → alert + tymczasowa blokada konta
+\item
+  Dostęp do plików spoza normalnego zakresu pracy użytkownika
+\item
+  Wysyłka dużej liczby e-maili przez jedno konto (\textgreater50/godz.)
+\item
+  Transfer danych \textgreater1 GB w krótkim czasie
+\item
+  Nowe urządzenie pojawiające się w sieci (rogue device)
+\end{itemize}
+
+\subsection{4. Procedura przechowywania i ochrony
+logów}\label{procedura-przechowywania-i-ochrony-loguxf3w}
+
+\begin{itemize}
+\tightlist
+\item
+  Logi przechowywane na oddzielnym, zabezpieczonym serwerze lub SIEM
+\item
+  Dostęp do logów: wyłącznie administrator IT i właściciel firmy
+\item
+  Logi niemodyfikowalne (write-once lub podpisane cyfrowo)
+\item
+  Kopia logów offsite lub w chmurze (zaszyfrowana)
+\end{itemize}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc10}
+PLAY-010
+
+\section{PLAYBOOK SYTUACJI NIETYPOWYCH -- INCIDENT
+RESPONSE}\label{playbook-sytuacji-nietypowych-incident-response}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Dotyczy: & Wszyscy pracownicy \\
+Odpowiedzialny: & Właściciel / Administrator IT \\
+Aktualizacja: & Po każdym incydencie i co 12 miesięcy \\
+\end{longtable}
+
+\textbf{ALARM:} Ten dokument musi być dostępny OFFLINE (wydrukowany) w widocznym
+miejscu. W przypadku incydentu sieć może być niedostępna.
+
+\subsection{1. Kontakty alarmowe -- WYPEŁNIĆ I
+WYDRUKOWAĆ}\label{kontakty-alarmowe-wypeux142niux107-i-wydrukowaux107}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Rola & Imię i Nazwisko & Telefon / E-mail & Zakres odpowiedzialności \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Właściciel firmy (CISO) & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Główna decyzja, autoryzacja działań \\
+Administrator IT & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Techniczne działanie i izolacja \\
+Osoba do kontaktu z Policją & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Zgłoszenia prawne, przestępstwa \\
+Osoba do kontaktu z mediami & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & JEDEN głos firmy, komunikacja zewn. \\
+Osoba do kontaktu z UODO & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Naruszenia RODO (72h) \\
+Prawnik firmy & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Porady prawne, kontakty z organami \\
+Ubezpieczyciel (cyber) & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Zgłoszenie szkody \\
+Zewnętrzna firma IT (backup) & \underline{\hspace{3cm}} &
+\underline{\hspace{3cm}} & Wsparcie techniczne awaryjne \\
+\end{longtable}
+
+Ważne numery: Policja: 997 \textbar{} CERT Polska: cert.pl \textbar{}
+UODO: uodo.gov.pl \textbar{} tel. UODO: 22 531 03 00
+
+\subsection{2. Fazy reagowania na
+incydent}\label{fazy-reagowania-na-incydent}
+
+\subsubsection{FAZA 1: Identyfikacja (0--30
+min)}\label{faza-1-identyfikacja-030-min}
+
+\begin{enumerate}
+\tightlist
+\item
+  Pracownik wykrywa anomalię → \textbf{NATYCHMIASTOWO} informuje
+  administratora IT i właściciela
+\item
+  Administrator IT ocenia powagę incydentu wg klasyfikacji poniżej
+\item
+  Rejestracja incydentu w Rejestrze Incydentów (godzina, opis, reporter)
+\end{enumerate}
+
+\subsubsection{FAZA 2: Izolacja (30--60
+min)}\label{faza-2-izolacja-3060-min}
+
+\begin{enumerate}
+\tightlist
+\item
+  Odizolowanie dotkniętych systemów od sieci (jeśli dotyczy) -- kabel
+  LAN + WiFi
+\item
+  Zmiana haseł do zagrożonych kont
+\item
+  Zabezpieczenie dowodów (logi, kopie plików) -- \textbf{NIE USUWAĆ
+  niczego}
+\end{enumerate}
+
+\subsubsection{FAZA 3: Ograniczenie i
+likwidacja}\label{faza-3-ograniczenie-i-likwidacja}
+
+\begin{enumerate}
+\tightlist
+\item
+  Blokada ruchu sieciowego do/ze źródeł ataku na firewall
+\item
+  Przywracanie z kopii zapasowej (wg DRP-011)
+\item
+  Identyfikacja wektora ataku i usunięcie złośliwego kodu
+\end{enumerate}
+
+\subsection{3. Matryca powiadamiania}\label{matryca-powiadamiania}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Kogo powiadomić & Kiedy & Kto powiadamia & Termin \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+UODO (Urząd Ochrony Danych) & Naruszenie danych osobowych z ryzykiem &
+Właściciel / IOD & \textbf{72 godziny} \\
+Klienci poszkodowani & Wysokie ryzyko dla ich danych & Właściciel & Bez
+zwłoki \\
+Policja / CERT Polska & Przestępstwo, atak hakerski, ransomware &
+Wyznaczona osoba & Niezwłocznie \\
+Media / PR & Jeśli incydent jest/może być publiczny & Właściciel (JEDEN
+głos) & Po konsultacji z prawnikiem \\
+Ubezpieczyciel & Szkoda objęta polisą cyber & Właściciel & 24--48
+godzin \\
+\end{longtable}
+
+\subsection{4. Scenariusze -- reakcje}\label{scenariusze-reakcje}
+
+\subsubsection{Scenariusz A: Phishing / kompromitacja
+konta}\label{scenariusz-a-phishing-kompromitacja-konta}
+
+\begin{itemize}
+\tightlist
+\item
+  Natychmiast zmień hasło i zresetuj MFA dla konta
+\item
+  Przegląd aktywności konta (logi) za ostatnie 30 dni
+\item
+  Sprawdź czy dane były eksportowane lub przesyłane
+\item
+  Poinformuj pozostałych pracowników (alert phishingowy)
+\end{itemize}
+
+\subsubsection{Scenariusz B:
+Ransomware}\label{scenariusz-b-ransomware}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{NATYCHMIASTOWO} odłącz zainfekowane urządzenie od sieci (kabel
+  + WiFi)
+\item
+  \textbf{NIE PŁACIĆ OKUPU} bez konsultacji z prawnikiem i
+  ubezpieczycielem
+\item
+  Uruchom procedurę DRP-011
+\item
+  Zgłoś do Policji i CERT Polska (cert.pl)
+\item
+  Zidentyfikuj wektor ataku i załataj podatność
+\end{itemize}
+
+\subsubsection{Scenariusz C: Wyciek danych
+klientów}\label{scenariusz-c-wyciek-danych-klientuxf3w}
+
+\begin{itemize}
+\tightlist
+\item
+  Zidentyfikuj jakie dane wyciekły i ile osób dotyczy
+\item
+  Ocena ryzyka wg RODO -- czy zgłosić do UODO (72h)?
+\item
+  Powiadom poszkodowanych klientów
+\item
+  Zabezpiecz dowody (nie usuwaj logów)
+\end{itemize}
+
+\subsection{5. Rejestr incydentów
+(szablon)}\label{rejestr-incydentuxf3w-szablon}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*220-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*200-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*180-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Data/Czas & Opis incydentu & Działania podjęte & Status & Zamknięty \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\underline{\hspace{2cm}} &
+\underline{\hspace{4cm}} &
+\underline{\hspace{4cm}} & {[} {]} Otwarty &
+\underline{\hspace{2cm}} \\
+\underline{\hspace{2cm}} &
+\underline{\hspace{4cm}} &
+\underline{\hspace{4cm}} & {[} {]} Otwarty &
+\underline{\hspace{2cm}} \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc11}
+DRP-011
+
+\section{PLAN ODTWARZANIA PO KATASTROFIE (DISASTER RECOVERY
+PLAN)}\label{plan-odtwarzania-po-katastrofie-disaster-recovery-plan}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Odpowiedzialny: & Właściciel / Administrator IT \\
+RTO (Recovery Time Objective): & {[}WYPEŁNIĆ -- np. 4 godziny{]} \\
+RPO (Recovery Point Objective): & {[}WYPEŁNIĆ -- np. 24 godziny{]} \\
+Testowanie planu: & Co 12 miesięcy (test pełny) + co 3 miesiące (test
+częściowy) \\
+\end{longtable}
+
+\subsection{1. Klasyfikacja systemów
+krytycznych}\label{klasyfikacja-systemuxf3w-krytycznych}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+System & Priorytet & RTO (maks.) & RPO (maks.) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+System księgowy (główna aplikacja) & [P1] KRYTYCZNY (P1) & 2 godziny & 4
+godziny \\
+Baza danych klientów & [P1] KRYTYCZNY (P1) & 2 godziny & 4 godziny \\
+Poczta e-mail & [P2] WYSOKI (P2) & 4 godziny & 24 godziny \\
+Współdzielone pliki (serwer) & [P2] WYSOKI (P2) & 4 godziny & 24
+godziny \\
+VPN / Zdalny dostęp & [P3] ŚREDNI (P3) & 8 godzin & 48 godzin \\
+Strona internetowa firmy & [P4] NISKI (P4) & 48 godzin & 7 dni \\
+\end{longtable}
+
+\subsection{2. Kolejność przywracania
+systemów}\label{kolejnoux15bux107-przywracania-systemuxf3w}
+
+\begin{enumerate}
+\tightlist
+\item
+  \textbf{BEZPIECZEŃSTWO} -- czy środowisko jest bezpieczne? (brak
+  aktywnego ataku)
+\item
+  Infrastruktura sieciowa (router, switch, firewall) -- konfiguracja z
+  backupu
+\item
+  Serwer baz danych -- przywracanie z ostatniego czystego backupu
+\item
+  System księgowy -- weryfikacja integralności danych
+\item
+  Konta użytkowników i uprawnienia (wg macierzy POL-005)
+\item
+  Poczta e-mail
+\item
+  VPN i dostęp zdalny
+\item
+  Weryfikacja kompletności -- porównanie z RPO
+\item
+  Informacja dla pracowników o wznowieniu pracy
+\item
+  Dokumentacja incydentu, wnioski (lessons learned), aktualizacja DRP
+\end{enumerate}
+
+\subsection{3. Lokalizacje kopii
+zapasowych}\label{lokalizacje-kopii-zapasowych}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Rodzaj kopii & Lokalizacja & Dostęp (kto / jak) & Przetestowany \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Backup lokalny (NAS) & {[}LOKALIZACJA{]} & {[}DANE DOSTĘPU{]} & {[} {]}
+\underline{\hspace{2cm}} \\
+Backup offsite (fizyczny) & {[}LOKALIZACJA{]} & {[}OSOBA
+ODPOWIEDZIALNA{]} & {[} {]} \underline{\hspace{2cm}} \\
+Backup chmurowy & {[}PLATFORMA/URL{]} & {[}DANE DOSTĘPU{]} & {[} {]}
+\underline{\hspace{2cm}} \\
+\end{longtable}
+
+\subsection{4. Procedura testowania DRP}\label{procedura-testowania-drp}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Test częściowy (co kwartał):} przywracanie wybranego systemu
+  lub pliku z backupów -- dokumentacja czasu i wyników
+\item
+  \textbf{Test pełny (co 12 miesięcy):} symulacja pełnej utraty
+  środowiska (możliwe środowisko testowe)
+\item
+  Dokumentacja wyników testu: osiągnięty RTO, RPO, uchybienia
+\item
+  Aktualizacja DRP na podstawie wyników testów
+\end{itemize}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+\phantomsection\label{doc12}
+PLAN-012
+
+\section{PLAN CIĄGŁEGO DOSKONALENIA
+CYBERBEZPIECZEŃSTWA}\label{plan-ciux105gux142ego-doskonalenia-cyberbezpieczeux144stwa}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*700-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wersja: & 1.0 \\
+Odpowiedzialny: & Właściciel / Administrator IT \\
+Cykl przeglądu: & Kwartalny przegląd KPI + roczne podsumowanie i
+planowanie \\
+\end{longtable}
+
+Cyberbezpieczeństwo nie jest jednorazowym projektem, lecz procesem.
+Firma zobowiązuje się do regularnego przeglądu, doskonalenia i
+rozwijania swoich praktyk bezpieczeństwa.
+
+\subsection{1. Cykl PDCA dla
+cyberbezpieczeństwa}\label{cykl-pdca-dla-cyberbezpieczeux144stwa}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*430-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*300-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Faza & Działanie & Przykłady aktywności \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+[P] PLAN (Planowanie) & Ocena ryzyka, ustalenie celów & Roczna ocena
+ryzyka, ustalenie KPI bezpieczeństwa \\
+[D] DO (Realizacja) & Wdrożenie środków & Nowe narzędzia, szkolenia,
+zaktualizowane procedury \\
+[C] CHECK (Sprawdzenie) & Monitorowanie i audyt & Testy penetracyjne,
+przeglądy logów, KPI \\
+[A] ACT (Działanie) & Korekty i ulepszenia & Aktualizacja polityk po
+incydencie / audycie \\
+\end{longtable}
+
+\subsection{2. Roczna ocena ryzyka
+(szablon)}\label{roczna-ocena-ryzyka-szablon}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Ryzyko & Prawdopodobieństwo (1--5) & Wpływ (1--5) & Planowane
+działanie \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Phishing / kompromitacja konta & \underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{3cm}} \\
+Ransomware & \underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{3cm}} \\
+Wyciek danych klientów & \underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{3cm}} \\
+Utrata backupów & \underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{3cm}} \\
+Nieautoryzowany dostęp wewnętrzny & \underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{3cm}} \\
+Awaria infrastruktury & \underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{3cm}} \\
+Dostawca / procesor zewnętrzny & \underline{\hspace{2cm}} & \underline{\hspace{2cm}} &
+\underline{\hspace{3cm}} \\
+\end{longtable}
+
+\subsection{3. KPI -- wskaźniki poziomu
+bezpieczeństwa}\label{kpi-wskaux17aniki-poziomu-bezpieczeux144stwa}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Wskaźnik & Cel & Aktualny wynik & Trend \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Czas średniego wykrycia incydentu (MTTD) & \textless{} 4 godziny &
+\underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+Czas średniego reagowania (MTTR) & \textless{} 8 godzin &
+\underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+\% pracowników z aktualnym szkoleniem & 100\% & \underline{\hspace{2cm}} &
+{[} {]} ↑ {[} {]} ↓ \\
+Współcz. kliknięć w phishing test & \textless{} 10\% &
+\underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+Systemy z aktualnym oprogramowaniem & \textgreater{} 95\% &
+\underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+Backup przywracany pomyślnie & 100\% & \underline{\hspace{2cm}} & {[} {]}
+↑ {[} {]} ↓ \\
+Krytyczne CVE bez łatki (\textgreater30 dni) & 0 &
+\underline{\hspace{2cm}} & {[} {]} ↑ {[} {]} ↓ \\
+\end{longtable}
+
+\subsection{4. Harmonogram działań
+doskonalenia}\label{harmonogram-dziaux142aux144-doskonalenia}
+
+\begin{longtable}[]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*270-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*250-2\tabcolsep\relax}>{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*230-2\tabcolsep\relax}@{}}
+\toprule\noalign{}
+Działanie & Termin & Odpowiedzialny & Status \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Roczna ocena ryzyka & Styczeń & Właściciel & {[} {]}
+\underline{\hspace{2cm}} \\
+Przegląd wszystkich polityk i procedur & Styczeń & Admin IT & {[} {]}
+\underline{\hspace{2cm}} \\
+Test penetracyjny (zewnętrzny) & Q2 & Zewnętrzny dostawca & {[} {]}
+\underline{\hspace{2cm}} \\
+Test DRP (pełny) & Q3 & Admin IT & {[} {]} \underline{\hspace{2cm}} \\
+Szkolenia odświeżające & Co 12 miesięcy & Admin IT & {[} {]}
+\underline{\hspace{2cm}} \\
+Przegląd i aktualizacja playbooka & Po każdym incydencie & Właściciel &
+{[} {]} \underline{\hspace{2cm}} \\
+Audyt zgodności RODO & Q4 & IOD / zewnętrzny & {[} {]}
+\underline{\hspace{2cm}} \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}
+  >{\raggedright\arraybackslash}p{\dimexpr\linewidth/1000*500-1\tabcolsep\relax}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\begin{minipage}[t]{\linewidth}\raggedright
+Zatwierdził:
+
+Podpis: \underline{\hspace{3cm}}
+
+Data: \underline{\hspace{4cm}}
+\end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+Stanowisko / Tytuł:
+
+Imię i nazwisko: \underline{\hspace{3cm}}
+
+Funkcja: \underline{\hspace{3cm}}
+\end{minipage} \\
+\end{longtable}
+
+{[}NAZWA FIRMY KSIĘGOWEJ{]} • Pakiet Dokumentacji Cyberbezpieczeństwa
+v1.0 • POUFNE
+
+\end{document}
