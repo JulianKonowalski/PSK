@@ -336,14 +336,14 @@ Zasób / System & Właściciel & Księgowy & Asystent & Gość/Klient \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-System księgowy (pełny) & Pełny & Pełny & Odczyt & Brak \\
-Dane klientów (CRM) & Pełny & Odczyt/Zapis & Odczyt & Brak \\
-Dokumenty finansowe (serwer) & Pełny & Swoje teczki & Brak & Brak \\
-Poczta e-mail firmowa & Pełny & Własna skrzynka & Własna skrzynka & Brak \\
-Internet / VPN & Pełny & Tak & Ograniczony & Brak \\
-Panel administracyjny IT & Pełny & Brak & Brak & Brak \\
-Kopie zapasowe & Pełny & Brak & Brak & Brak \\
-Logi i narzędzia audytowe & Pełny & Brak & Brak & Brak \\
+System księgowy (pełny) & Odczyt & Pełny & Odczyt & Brak \\
+Dane klientów (CRM) & Odczyt & Odczyt/Zapis & Odczyt & Brak \\
+Dokumenty finansowe (serwer) & Odczyt & Swoje teczki & Brak & Brak \\
+Poczta e-mail firmowa & Odczyt & Własna skrzynka & Własna skrzynka & Brak \\
+Internet / VPN & Odczyt & Tak & Ograniczony & Brak \\
+Panel administracyjny IT & Odczyt & Brak & Brak & Brak \\
+Kopie zapasowe & Odczyt & Brak & Brak & Brak \\
+Logi i narzędzia audytowe & Odczyt & Brak & Brak & Brak \\
 \end{longtable}
 
 Macierz dostępu podlega przeglądowi co \textbf{kwartał} (kontrola A.5.18)
@@ -1103,7 +1103,7 @@ Zgodnie z kontrolą \textbf{A.8.8 (Zarządzanie podatnościami technicznymi)}:
 \item
   Skany podatności sieci wewnętrznej i zewnętrznej: co najmniej co 6 miesięcy (narzędzia: OpenVAS, Nessus lub równoważne).
 \item
-  Łatki krytyczne (CVSS $\geq$ 9.0): wdrożenie w ciągu 48 godzin.
+  Łatki krytyczne (CVSS $\geq$ 9.0): wdrożenie w ciągu 72 godzin.
 \item
   Łatki wysokie (CVSS 7.0--8.9): wdrożenie w ciągu 7 dni.
 \item
@@ -1162,7 +1162,7 @@ Zgodnie z kontrolą \textbf{A.8.20 (Bezpieczeństwo sieci)} i \textbf{A.8.21 (Be
 \item 
   Logowanie wszystkich sesji VPN: data, godzina, adres IP zródłowy, uzytkownik,czas trwania
 \item 
-  Zatwierdzenie dostępu zdalnego wymaga pisemnego wniosku zaakceptowanego przez właściciela firmy
+  Zatwierdzenie dostępu zdalnego wymaga pisemnego wniosku zaakceptowanego przez administratora IT
 
 \end{itemize}
 
@@ -1223,7 +1223,7 @@ Zgodnie z kontrolami \textbf{A.7.1 (Fizyczne granice bezpieczeństwa)} i \textbf
 \item
   Serwery i urządzenia sieciowe umieszczone w zamykanej szafie serwerowej lub wydzielonym pomieszczeniu z kontrolą dostępu
 \item
-  Klucze/karty dostępu do pomieszczenia serwerowni: wyłączenie administrator IT i właściciel firmy
+  Klucze/karty dostępu do pomieszczenia serwerowni: wyłączenie administrator IT
 \item
   Rejestr wejść do pomieszczenia serwerowni
 \item
